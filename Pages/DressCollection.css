@@ -1,0 +1,396 @@
+/* ===============================
+   FIXORA | Dress Page - Black & Gold Luxury Theme
+   =============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.dress-page {
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+    linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d2d 100%);
+  min-height: 100vh;
+  width: 100vw;
+  padding: 0;
+  position: relative;
+}
+
+/* Animated Background Elements */
+.dress-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Header Section */
+.dress-header {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 2rem 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.dress-page h2 {
+  font-weight: 800;
+  color: #d4af37;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  text-align: center;
+  position: relative;
+}
+
+.dress-page h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f, #ffffff, #d4af37);
+  border-radius: 3px;
+}
+
+/* Category Buttons - Full Width */
+.category-section {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 1.5rem 0;
+  margin: 0;
+  width: 100%;
+}
+
+.category-buttons {
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-buttons .btn {
+  border-radius: 25px;
+  padding: 14px 32px;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  margin: 5px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.category-buttons .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.category-buttons .btn:hover::before {
+  left: 100%;
+}
+
+.category-buttons .btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.active-cat {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(212, 175, 55, 0.1)) !important;
+  color: #ffffff !important;
+  box-shadow: 
+    0 8px 25px rgba(212, 175, 55, 0.3),
+    inset 0 1px 0 rgba(212, 175, 55, 0.3) !important;
+  border: 1px solid rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Products Grid - Full Width */
+.products-section {
+  padding: 3rem 2rem;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.row {
+  margin: 0 -10px;
+  perspective: 1000px;
+}
+
+.col-lg-3, .col-md-4, .col-sm-6 {
+  padding: 15px;
+}
+
+.card {
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #f4d03f, #ffffff, #d4af37);
+  z-index: 2;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.03) rotateX(5deg);
+  box-shadow: 
+    0 25px 50px rgba(212, 175, 55, 0.2),
+    0 0 0 1px rgba(212, 175, 55, 0.4);
+}
+
+.card-img-top {
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.15);
+}
+
+.card-body {
+  padding: 1.8rem;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.9));
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  min-height: 60px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.card-text {
+  color: #e0e0e0;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.price-tag {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #d4af37;
+  margin-bottom: 18px;
+  display: block;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.btn-success {
+  border-radius: 15px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: linear-gradient(135deg, #d4af37, #f4d03f);
+  border: none;
+  padding: 14px 28px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  font-size: 1rem;
+  color: #000000;
+}
+
+.btn-success::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s;
+}
+
+.btn-success:hover::before {
+  left: 100%;
+}
+
+.btn-success:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #c19b2e, #e6c260);
+  color: #000000;
+}
+
+/* 3D Floating Animation */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotateY(0deg); 
+  }
+  50% { 
+    transform: translateY(-15px) rotateY(5deg); 
+  }
+}
+
+.card {
+  animation: float 8s ease-in-out infinite;
+}
+
+.card:nth-child(2n) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3n) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(4n) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dress-page h2 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+  
+  .category-buttons .btn {
+    padding: 12px 24px;
+    margin: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .products-section {
+    padding: 2rem 1rem;
+  }
+  
+  .col-sm-6 {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dress-page h2 {
+    font-size: 2rem;
+  }
+  
+  .category-buttons {
+    gap: 8px;
+  }
+  
+  .category-buttons .btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .products-section {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Additional 3D Effects */
+.card-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* Remove any remaining margins and padding */
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Ensure full width for all sections */
+section, div[class*="container"] {
+  max-width: 100% !important;
+}
+
+/* Luxury Text Effects */
+.card-title, .card-text, .price-tag {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Gold Accent Borders */
+.category-buttons .btn, .card, .btn-success {
+  position: relative;
+}
+
+/* Enhanced Hover Effects */
+.card:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 20px;
+}
