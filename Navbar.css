@@ -1,0 +1,461 @@
+/* ===============================
+   FIXORA | Animated Professional Navbar
+   =============================== */
+
+/* Keyframes for Animations */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(255, 193, 7, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(255, 193, 7, 0.3);
+  }
+}
+
+/* Navbar Base */
+.navbar {
+  background: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.8rem 2rem !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeDown 0.6s ease-in-out;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.navbar:hover {
+  background: rgba(15, 15, 15, 0.98) !important;
+  box-shadow: 0 4px 20px rgba(255, 193, 7, 0.15);
+}
+
+/* Brand Name (FIXORA) */
+.navbar-brand {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem !important;
+  color: #ffc107 !important;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  animation: fadeDown 0.9s ease-in-out;
+}
+
+.navbar-brand:hover {
+  color: #ffcf40 !important;
+  text-shadow: 0 0 10px rgba(255, 193, 7, 0.7);
+  transform: scale(1.05);
+}
+
+/* Nav Links */
+.nav-link {
+  font-family: "Poppins", sans-serif;
+  color: #f1f1f1 !important;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0.8rem;
+  position: relative;
+  transition: color 0.3s ease, transform 0.2s ease;
+  animation: fadeDown 1s ease-in-out;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ffc107;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Cart Button */
+/* ===============================
+   FIXORA | Funny & Attractive Cart Animations
+   =============================== */
+
+/* Keyframes for Funny Animations */
+@keyframes cartDance {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  25% { 
+    transform: translateY(-8px) rotate(-2deg); 
+  }
+  50% { 
+    transform: translateY(-4px) rotate(2deg); 
+  }
+  75% { 
+    transform: translateY(-6px) rotate(-1deg); 
+  }
+}
+
+@keyframes cartBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  60% {
+    transform: translateY(-7px) scale(1.05);
+  }
+}
+
+@keyframes cartShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes cartSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes cartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cartGlow {
+  0%, 100% { 
+    box-shadow: 0 0 5px #ffc107;
+  }
+  50% { 
+    box-shadow: 0 0 20px #ffc107, 0 0 30px #ffeb3b;
+  }
+}
+
+@keyframes cartFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg); 
+  }
+  33% { 
+    transform: translateY(-10px) rotate(5deg); 
+  }
+  66% { 
+    transform: translateY(-5px) rotate(-5deg); 
+  }
+}
+
+/* Cart Button - Enhanced Funny Animations */
+.cart-btn {
+  background: linear-gradient(90deg, #ffc107, #ffb300);
+  color: #121212 !important;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1.2rem;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: cartDance 3s ease-in-out infinite, cartGlow 2s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.cart-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  animation: cartShine 3s ease-in-out infinite;
+}
+
+@keyframes cartShine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.cart-btn:hover {
+  background: linear-gradient(90deg, #ffcf40, #ffae00);
+  transform: translateY(-3px) scale(1.05);
+  animation: cartBounce 0.8s ease-in-out, cartGlow 0.5s ease-in-out infinite !important;
+}
+
+.cart-btn:active {
+  animation: cartSpin 0.6s ease-in-out !important;
+}
+
+/* Cart Icon Enhanced Animations */
+.bi-cart-fill {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  animation: cartFloat 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+.cart-btn:hover .bi-cart-fill {
+  animation: cartPulse 0.5s ease-in-out 3, cartSpin 1s ease-in-out !important;
+}
+
+/* Cart Count Badge - Funny Animation */
+.cart-count {
+  background: #ff4757;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  animation: cartBounce 2s ease-in-out infinite;
+  position: relative;
+}
+
+.cart-count::after {
+  content: '🎉';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  animation: confettiPop 0.5s ease-in-out;
+}
+
+@keyframes confettiPop {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-50%) scale(0); 
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateX(-50%) scale(1.2); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateX(-50%) translateY(-30px) scale(0.8); 
+  }
+}
+
+.cart-btn:hover .cart-count {
+  animation: cartPulse 0.3s ease-in-out 3, cartShake 0.5s ease-in-out !important;
+}
+
+.cart-btn:hover .cart-count::after {
+  animation: confettiPop 0.5s ease-in-out;
+}
+
+/* Item Added Animation */
+@keyframes itemAdded {
+  0% {
+    transform: scale(0.5) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.item-added .bi-cart-fill {
+  animation: itemAdded 0.6s ease-in-out !important;
+}
+
+/* Empty Cart Animation */
+.cart-btn.empty {
+  animation: cartShake 0.5s ease-in-out infinite;
+}
+
+.cart-btn.empty .bi-cart-fill {
+  animation: cartPulse 1s ease-in-out infinite !important;
+}
+
+/* Special Events Animation */
+.cart-btn.special {
+  background: linear-gradient(90deg, #ff6b6b, #ffc107, #4ecdc4, #45b7d1);
+  background-size: 300% 300%;
+  animation: gradientShift 2s ease-in-out infinite, cartDance 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Loading Animation */
+.cart-btn.loading {
+  position: relative;
+}
+
+.cart-btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid #121212;
+  border-radius: 50%;
+  animation: loadingSpin 1s linear infinite;
+}
+
+@keyframes loadingSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Success Animation */
+.cart-btn.success {
+  animation: cartSuccess 1s ease-in-out !important;
+}
+
+@keyframes cartSuccess {
+  0% { transform: scale(1); }
+  50% { 
+    transform: scale(1.1);
+    background: linear-gradient(90deg, #4ecdc4, #44a08d);
+  }
+  100% { transform: scale(1); }
+}
+
+/* Responsive View - Enhanced */
+@media (max-width: 991px) {
+  .cart-btn {
+    width: 90%;
+    margin: 1rem auto 0 auto;
+    justify-content: center;
+    animation: cartBounce 4s ease-in-out infinite, cartGlow 3s ease-in-out infinite;
+  }
+  
+  .cart-btn:hover {
+    animation: cartShake 0.5s ease-in-out, cartPulse 0.3s ease-in-out 3 !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .cart-btn,
+  .bi-cart-fill,
+  .cart-count {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .cart-btn:active {
+    animation: cartPulse 0.3s ease-in-out !important;
+    transform: scale(0.95);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .cart-btn {
+    border: 2px solid #000;
+    animation: cartBounce 3s ease-in-out infinite !important;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .cart-btn {
+    background: linear-gradient(90deg, #ffd54f, #ffb300);
+    color: #000 !important;
+  }
+  
+  .cart-btn:hover {
+    background: linear-gradient(90deg, #ffe082, #ffca28);
+  }
+}
+
+/* Add these utility classes for dynamic animations */
+.cart-btn.celebrate {
+  animation: cartSpin 1s ease-in-out, cartGlow 0.5s ease-in-out infinite !important;
+}
+
+.cart-btn.wiggle {
+  animation: cartShake 0.3s ease-in-out 3 !important;
+}
+
+.cart-btn.jump {
+  animation: cartBounce 0.5s ease-in-out !important;
+}
+
+/* Cart Button States with Emojis */
+.cart-btn::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.cart-btn.full::after {
+  content: '🛍️';
+  opacity: 1;
+  animation: cartFloat 2s ease-in-out infinite;
+}
+
+.cart-btn.hot::after {
+  content: '🔥';
+  opacity: 1;
+  animation: cartPulse 0.5s ease-in-out infinite;
+}
+/* Responsive View */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0.7rem 1.2rem !important;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    background: rgba(18, 18, 18, 0.98);
+    border-radius: 12px;
+    margin-top: 10px;
+    padding: 0.8rem 0;
+    animation: fadeDown 0.5s ease-in-out;
+  }
+
+  .nav-link {
+    margin: 0.6rem 0;
+    font-size: 1.1rem;
+  }
+
+  .cart-btn {
+    width: 90%;
+    margin: 1rem auto 0 auto;
+    justify-content: center;
+  }
+}
